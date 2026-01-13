@@ -160,7 +160,8 @@ def check_winner():
     
 window = Tk()
 window.geometry("600x600")
-window.config(background="orange")
+window.title("Tic-Tac-Toe")
+window.config(background="orange",)
 frame1=Frame(window)
 Label(frame1,text="Tic Tac Toe",font=("impact","45"),bg="orange",fg="black").pack()
 frame1.pack()
