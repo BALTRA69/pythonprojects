@@ -2,6 +2,9 @@ from tkinter import *
 from tkinter import messagebox
 
 #fucntion to put X and O in box
+x_win=0
+o_win=0
+draw=0
 clicked =False
 count =0
 def click(b):
@@ -32,64 +35,64 @@ def disable_all_buttons():
     button9.config(state=DISABLED)
 
 #to check if X won
-def check_winner():
-    global winner
-    winner = False
 
+def check_winner():
+    global winner,x_win,o_win,draw
+    winner = "Draw"
     if button1["text"]=="X" and button2["text"]=="X" and button3["text"]=="X":
         button1.config(bg="#ffb6be")
         button2.config(bg="#ffb6be")
         button3.config(bg="#ffb6be")
-        winner = True
+        winner = "X"
         messagebox.showinfo("Winner", "X wins the game!! 🎉")
         disable_all_buttons()
     elif button4["text"]=="X" and button5["text"]=="X" and button6["text"]=="X":
         button4.config(bg="#ffb6be")
         button5.config(bg="#ffb6be")
         button6.config(bg="#ffb6be")
-        winner = True
+        winner = "X"
         messagebox.showinfo("Winner", "X wins the game!! 🎉")
         disable_all_buttons()
     elif button7["text"]=="X" and button8["text"]=="X" and button9["text"]=="X":
         button7.config(bg="#ffb6be")
         button8.config(bg="#ffb6be")
         button9.config(bg="#ffb6be")
-        winner = True
+        winner = "X"
         messagebox.showinfo("Winner", "X wins the game!! 🎉")
         disable_all_buttons()
     elif button1["text"]=="X" and button4["text"]=="X" and button7["text"]=="X":
         button1.config(bg="#ffb6be")
         button4.config(bg="#ffb6be")
         button7.config(bg="#ffb6be")
-        winner = True
+        winner = "X"
         messagebox.showinfo("Winner", "X wins the game!! 🎉")
         disable_all_buttons()
     elif button2["text"]=="X" and button5["text"]=="X" and button8["text"]=="X":
         button2.config(bg="#ffb6be")
         button5.config(bg="#ffb6be")
         button8.config(bg="#ffb6be")
-        winner = True
+        winner = "X"
         messagebox.showinfo("Winner", "X wins the game!! 🎉")
         disable_all_buttons()
     elif button3["text"]=="X" and button6["text"]=="X" and button9["text"]=="X":
         button3.config(bg="#ffb6be")
         button6.config(bg="#ffb6be")
         button9.config(bg="#ffb6be")
-        winner = True
+        winner = "X"
         messagebox.showinfo("Winner", "X wins the game!! 🎉")
         disable_all_buttons()
     elif button1["text"]=="X" and button5["text"]=="X" and button9["text"]=="X":
         button1.config(bg="#ffb6be")
         button5.config(bg="#ffb6be")
         button9.config(bg="#ffb6be")
-        winner = True
+        winner = "X"
         messagebox.showinfo("Winner", "X wins the game!! 🎉")
         disable_all_buttons()
     elif button3["text"]=="X" and button5["text"]=="X" and button7["text"]=="X":
         button3.config(bg="#ffb6be")
         button5.config(bg="#ffb6be")
         button7.config(bg="#ffb6be")
-        winner = True
+        winner = "X"
         messagebox.showinfo("Winner", "X wins the game!! 🎉")
         disable_all_buttons()
 
@@ -99,63 +102,71 @@ def check_winner():
         button1.config(bg="#ffb6be")
         button2.config(bg="#ffb6be")
         button3.config(bg="#ffb6be")
-        winner = True
+        winner = "O"
         messagebox.showinfo("Winner", "O wins the game!! 🎉")
         disable_all_buttons()
     elif button4["text"]=="O" and button5["text"]=="O" and button6["text"]=="O":
         button4.config(bg="#ffb6be")
         button5.config(bg="#ffb6be")
         button6.config(bg="#ffb6be")
-        winner = True
+        winner = "O"
         messagebox.showinfo("Winner", "O wins the game!! 🎉")
         disable_all_buttons()
     elif button7["text"]=="O" and button8["text"]=="O" and button9["text"]=="O":
         button7.config(bg="#ffb6be")
         button8.config(bg="#ffb6be")
         button9.config(bg="#ffb6be")
-        winner = True
+        winner = "O"
         messagebox.showinfo("Winner", "O wins the game!! 🎉")
         disable_all_buttons()
     elif button1["text"]=="O" and button4["text"]=="O" and button7["text"]=="O":
         button1.config(bg="#ffb6be")
         button4.config(bg="#ffb6be")
         button7.config(bg="#ffb6be")
-        winner = True
+        winner = "O"
         messagebox.showinfo("Winner", "O wins the game!! 🎉")
         disable_all_buttons()
     elif button2["text"]=="O" and button5["text"]=="O" and button8["text"]=="O":
         button2.config(bg="#ffb6be")
         button5.config(bg="#ffb6be")
         button8.config(bg="#ffb6be")
-        winner = True
+        winner = "O"
         messagebox.showinfo("Winner", "O wins the game!! 🎉")
         disable_all_buttons()
     elif button3["text"]=="O" and button6["text"]=="O" and button9["text"]=="O":
         button3.config(bg="#ffb6be")
         button6.config(bg="#ffb6be")
         button9.config(bg="#ffb6be")
-        winner = True
+        winner = "O"
         messagebox.showinfo("Winner", "O wins the game!! 🎉")
         disable_all_buttons()
     if button1["text"]=="O" and button5["text"]=="O" and button9["text"]=="O":
         button1.config(bg="#ffb6be")
         button5.config(bg="#ffb6be")
         button9.config(bg="#ffb6be")
-        winner = True
+        winner = "O"
         messagebox.showinfo("Winner", "O wins the game!! 🎉")
         disable_all_buttons()
     elif button3["text"]=="O" and button5["text"]=="O" and button7["text"]=="O":
         button3.config(bg="#ffb6be")
         button5.config(bg="#ffb6be")
         button7.config(bg="#ffb6be")
-        winner = True
+        winner = "O"
         messagebox.showinfo("Winner", "O wins the game!! 🎉")
         disable_all_buttons()
 # check for draw
-    if count == 9 and winner == False:
+    if winner=="X":
+        x_win+=1
+        win_loss()
+    elif winner=="O":
+        o_win+=1
+        win_loss()
+    if count==9 and winner =="Draw":
+        draw+=1
+        win_loss()
         messagebox.showinfo("Draw", "It's a draw! 🤝")
         disable_all_buttons()
-
+        
     
     
 window = Tk()
@@ -168,6 +179,18 @@ frame1.pack()
 
 frame2=Frame(window)
 frame2.pack()
+
+frame3=Frame(window)
+frame3.pack()
+
+label3 = Label(frame3, text="X win: 0   O win: 0   Draw: 0",font=("impact","25"),bg="orange",fg="black")
+label3.pack()
+#win loss count
+def win_loss():
+    
+    label3.config(text=f"X win: {x_win}   O win: {o_win}   Draw: {draw}")
+
+
 
 # making tic tac toe box
 def reset():
