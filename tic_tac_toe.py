@@ -50,7 +50,7 @@ def check_winner():
         winner = True
         messagebox.showinfo("Winner", "X wins the game!! 🎉")
         disable_all_buttons()
-    elif button5["text"]=="X" and button6["text"]=="X" and button7["text"]=="X":
+    elif button7["text"]=="X" and button8["text"]=="X" and button9["text"]=="X":
         button7.config(bg="#ffb6be")
         button8.config(bg="#ffb6be")
         button9.config(bg="#ffb6be")
@@ -109,7 +109,7 @@ def check_winner():
         winner = True
         messagebox.showinfo("Winner", "O wins the game!! 🎉")
         disable_all_buttons()
-    elif button5["text"]=="O" and button6["text"]=="O" and button7["text"]=="O":
+    elif button7["text"]=="O" and button8["text"]=="O" and button9["text"]=="O":
         button7.config(bg="#ffb6be")
         button8.config(bg="#ffb6be")
         button9.config(bg="#ffb6be")
