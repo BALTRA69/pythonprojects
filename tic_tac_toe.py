@@ -20,7 +20,7 @@ def click(b):
         clicked=False
         check_winner()
     else:
-        messagebox.showerror("Error!!","Hey, can't enter here chose")
+        messagebox.showerror("Error!!","Hey, can't enter here!!")
 
 #to disable all buttons after someone won
 def disable_all_buttons():
@@ -154,7 +154,8 @@ def check_winner():
         winner = "O"
         messagebox.showinfo("Winner", "O wins the game!! 🎉")
         disable_all_buttons()
-# check for draw
+
+# check for draw and increase win count
     if winner=="X":
         x_win+=1
         win_loss()
@@ -185,6 +186,7 @@ frame3.pack()
 
 label3 = Label(frame3, text="X win: 0   O win: 0   Draw: 0",font=("impact","25"),bg="orange",fg="black")
 label3.pack()
+
 #win loss count
 def win_loss():
     
