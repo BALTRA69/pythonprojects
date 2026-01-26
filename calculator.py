@@ -78,4 +78,5 @@ bcal=tk.Button(root,text="=",font=("Aerial","10"),command=evaluate_calculation,w
 bcal.grid(row=6, column=2, columnspan=2,padx=0,pady=0,sticky='nsew')
 bclear=tk.Button(root,text="CE",font=("Aerial","10"),command=lambda:clear_field(),width=24,height=2)
 bclear.grid(row=6, column=0, columnspan=2,padx=0,pady=0,sticky='nsew')
+
 root.mainloop()
